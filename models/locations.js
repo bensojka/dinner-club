@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Location.associate = function(models) {
-        Location.belongsTo(models.User, {
+        Location.belongsTo(models.user, {
             onDelete: "cascade"
         });
     };
