@@ -1,14 +1,18 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('User', {
-    facebookId: DataTypes.INTEGER,
-    name: DataTypes.STRING
+  var user = sequelize.define("user", {
+      name: DataTypes.STRING,
+      email: DataTypes.STRING
   }, {
-    classMethods: {
-
-    }
+      timestamps: true
   });
 
-  return User;
+  // User.associate = function(models) {
+  //     User.belongsTo(models.users_groups, {
+  //         onDelete: "cascade"
+  //     });
+  // };
+
+  return user;
 };

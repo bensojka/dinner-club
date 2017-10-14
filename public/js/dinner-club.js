@@ -36,6 +36,26 @@ $( document ).ready(function() {
 		// add user to db or if existing (get ID);
 		// go to next page.
 
+		var user = {
+			email: $(".email-login").val().trim(),
+			name: null
+		  };
+		
+		  console.log(user);
+		  $.post("/api/new", user)
+		  // On success, run the following code
+		  .done(function(data) {
+			// Log the data we found
+			console.log(data);
+		  });
+		  // Send an AJAX POST-request with jQuery
+		//   $.post("/api/new", newBook)
+		// 	// On success, run the following code
+		// 	.done(function(data) {
+		// 	  // Log the data we found
+		// 	  console.log(data);
+			
+
 		// var burgerName = $("#burgerInput").val().trim();
 		// $.ajax({
 		// 	method: "POST",
