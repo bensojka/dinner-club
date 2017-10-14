@@ -6,6 +6,7 @@ html, body {
     align-items: center;
     justify-content: space-between;
     font-family: 'Quattrocento Sans', sans-serif;
+    background-color: #F2F2F2;
 }
 
 @media screen and (max-width: 640px) {
@@ -14,7 +15,7 @@ html, body {
         height: 100vh;
         border-right: 1px darkkhaki solid;
         position: fixed;
-        left: -30vh;
+        left: -30vw;
         z-index: 750;
         display: flex;
         flex-direction: column;
@@ -251,7 +252,7 @@ html, body {
         height: 100vh;
         border-right: 1px darkkhaki solid;
         position: fixed;
-        left: -30vh;
+        left: -30vw;
         z-index: 750;
         display: flex;
         flex-direction: column;
@@ -488,7 +489,7 @@ html, body {
         height: 100vh;
         border-right: 1px darkkhaki solid;
         position: fixed;
-        left: -30vh;
+        left: -30vw;
         z-index: 750;
         display: flex;
         flex-direction: column;
@@ -509,7 +510,7 @@ html, body {
 
     .offcanvas-nav a{
         padding-top: 20px;
-        font-size: 5vw;
+        font-size: 3vw;
         text-decoration: none;
         text-align: center;
     }
@@ -540,14 +541,22 @@ html, body {
 
     .cta-wrapper {
         max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .cta-wrap {
+        max-height: 100vh;
         max-width: 100%;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .cta-img {
+        max-height: 100vh;
         max-width: 100%;
     }
 
@@ -590,10 +599,16 @@ html, body {
     }
 
     .groups-header {
+        max-height: 100vh;
         max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F7FFDD;
     }
 
     .group-img {
+        max-height: 100vh;
         max-width: 100%;
     }
 
@@ -650,7 +665,7 @@ html, body {
 
     .group-btn {
         height: 5vh;
-        width: 80%;
+        width: 50%;
         font-size: 150%;
         background-color: khaki;
         border: 0;
