@@ -10,6 +10,9 @@ $(function() {
         closeModal();
     });
 
+    $('.login-btn').click(function () {
+        event.preventDefault();
+    })
 });
 
 function openModal(){
@@ -25,3 +28,4 @@ function closeModal(){
     modalWrapper.css('visibility', '0');
     modalWrapper.css('z-index', '-1')
 }
+

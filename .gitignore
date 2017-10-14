@@ -60,3 +60,4 @@ typings/
 .env
 
 /config/config.json
+.idea/
