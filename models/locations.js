@@ -5,11 +5,11 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: true
     });
 
-    // Location.associate = function(models) {
-    //     Location.belongsTo(models.groups_locations, {
-    //         onDelete: "cascade"
-    //     });
-    // };
+    Location.associate = function(models) {
+        Location.belongsTo(models.User, {
+            onDelete: "cascade"
+        });
+    };
 
     return Location;
 };
