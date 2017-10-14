@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
-    facebookId: DataTypes.INT,
+    facebookId: DataTypes.INTEGER,
     name: DataTypes.STRING
   }, {
     classMethods: {
