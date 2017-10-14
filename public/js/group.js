@@ -15,5 +15,7 @@ function expandGroup(){
 
     if(contents.hasClass('closed')){
         contents.removeClass('closed').addClass('open');
+    } else if(contents.hasClass('open')){
+        contents.removeClass('open').addClass('closed')
     }
 }

@@ -7,22 +7,20 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="js/group.js"></script>
+    <script src="js/offcanvas.js"></script>
 </head>
 <body>
-<nav>
+<nav class="offcanvas-nav">
+    <img class="nav-hamburger-icon offcanvas-burg" src="assets/img/burger.svg">
+    <a href="/index.html#">Login</a>
+    <a href="/groups.html#">Groups</a>
+</nav>
+<nav class="primary-nav">
     <a><img class="nav-hamburger-icon" src="assets/img/burger.svg"></a>
 </nav>
 <main>
     <section class="groups-header">
         <img class="group-img" src="./assets/img/groups-one.jpg">
-    </section>
-    <section class="create-wrapper">
-        <div class="create">
-            <form>
-                <input placeholder="Group Name">
-                <button class="group-submit">Submit</button>
-            </form>
-        </div>
     </section>
     <section class="groups-wrapper">
         <div class="group" id="1">
@@ -44,7 +42,6 @@
                     <button class="location-submit">Submit</button>
                 </form>
             </div>
-            <p>test</p>
         </div>
     </section>
 </main>

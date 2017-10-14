@@ -1,5 +1,5 @@
 html, body {
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,38 @@ html, body {
 }
 
 @media screen and (max-width: 640px) {
-    nav {
+    .offcanvas-nav {
+        width: 30vw;
+        height: 100vh;
+        border-right: 1px darkkhaki solid;
+        position: fixed;
+        left: -30vh;
+        z-index: 750;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: khaki;
+    }
+
+    .offcanvas-burg {
+        align-self: flex-end;
+    }
+
+    .offcanvas-open {
+        left: 0;
+    }
+
+    .offcanvas-nav a{
+        font-size: 5vw;
+        padding-top: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .primary-nav {
         height: 30px;
         width: 100%;
         position: fixed;
@@ -28,7 +59,7 @@ html, body {
     }
 
     main {
-        height: 100vh;
+        min-height: calc(100vh - 60px);
         width: 100%;
         padding-top: 30px;
     }
@@ -115,7 +146,7 @@ html, body {
     }
 
     .groups-wrapper {
-        min-height: 100vh;
+        min-height: 300px;
         max-width: 100%;
         overflow: auto;
         display: flex;
@@ -135,7 +166,7 @@ html, body {
     }
 
     .group {
-        height: 10vh;
+        min-height: 10vh;
         width: 70%;
         display: flex;
         flex-direction: column;
@@ -144,10 +175,10 @@ html, body {
     }
 
     .group-btn {
-        height: 50%;
+        height: 5vh;
         width: 80%;
         font-size: 150%;
-        background-color: darkkhaki;
+        background-color: khaki;
         border: 0;
     }
 
@@ -156,10 +187,7 @@ html, body {
     }
 
     .group-contents {
-        height: 0;
-        visibility: hidden;
-        -webkit-transition: all 600ms linear;
-        transition: all 600ms linear;
+
     }
 
     .group-title {
@@ -181,6 +209,10 @@ html, body {
     footer {
         height: 30px;
         width: 100%;
+        background-color: khaki;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .modal-wrapper {
@@ -214,7 +246,38 @@ html, body {
 }
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
-    nav {
+    .offcanvas-nav {
+        width: 30vw;
+        height: 100vh;
+        border-right: 1px darkkhaki solid;
+        position: fixed;
+        left: -30vh;
+        z-index: 750;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: khaki;
+    }
+
+    .offcanvas-burg {
+        align-self: flex-end;
+    }
+
+    .offcanvas-open {
+        left: 0;
+    }
+
+    .offcanvas-nav a{
+        padding-top: 20px;
+        font-size: 5vw;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .primary-nav {
         height: 30px;
         width: 100%;
         position: fixed;
@@ -233,7 +296,7 @@ html, body {
     }
 
     main {
-        height: 100vh;
+        min-height: calc(100vh - 60px);
         width: 100%;
         padding-top: 30px;
     }
@@ -320,7 +383,7 @@ html, body {
     }
 
     .groups-wrapper {
-        min-height: 100vh;
+        min-height: 400px;
         max-width: 100%;
         overflow: auto;
         display: flex;
@@ -340,7 +403,7 @@ html, body {
     }
 
     .group {
-        height: 10vh;
+        min-height: 10vh;
         width: 70%;
         display: flex;
         flex-direction: column;
@@ -349,10 +412,10 @@ html, body {
     }
 
     .group-btn {
-        height: 50%;
+        height: 5vh;
         width: 80%;
         font-size: 150%;
-        background-color: darkkhaki;
+        background-color: khaki;
         border: 0;
     }
 
@@ -361,10 +424,7 @@ html, body {
     }
 
     .group-contents {
-        height: 0;
-        visibility: hidden;
-        -webkit-transition: all 600ms linear;
-        transition: all 600ms linear;
+
     }
 
     .group-title {
@@ -386,6 +446,10 @@ html, body {
     footer {
         height: 30px;
         width: 100%;
+        background-color: khaki;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .modal-wrapper {
@@ -419,7 +483,38 @@ html, body {
 }
 
 @media screen and (min-width: 1025px) {
-    nav {
+    .offcanvas-nav {
+        width: 30vw;
+        height: 100vh;
+        border-right: 1px darkkhaki solid;
+        position: fixed;
+        left: -30vh;
+        z-index: 750;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: khaki;
+    }
+
+    .offcanvas-burg {
+        align-self: flex-end;
+    }
+
+    .offcanvas-open {
+        left: 0;
+    }
+
+    .offcanvas-nav a{
+        padding-top: 20px;
+        font-size: 5vw;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .primary-nav {
         height: 30px;
         width: 100%;
         position: fixed;
@@ -438,7 +533,7 @@ html, body {
     }
 
     main {
-        height: 100vh;
+        min-height: calc(100vh - 60px);
         width: 100%;
         padding-top: 30px;
     }
@@ -525,7 +620,7 @@ html, body {
     }
 
     .groups-wrapper {
-        min-height: 100vh;
+        min-height: 600px;
         max-width: 100%;
         overflow: auto;
         display: flex;
@@ -545,7 +640,7 @@ html, body {
     }
 
     .group {
-        height: 10vh;
+        min-height: 10vh;
         width: 70%;
         display: flex;
         flex-direction: column;
@@ -554,10 +649,10 @@ html, body {
     }
 
     .group-btn {
-        height: 50%;
+        height: 5vh;
         width: 80%;
         font-size: 150%;
-        background-color: darkkhaki;
+        background-color: khaki;
         border: 0;
     }
 
@@ -566,10 +661,7 @@ html, body {
     }
 
     .group-contents {
-        height: 0;
-        visibility: hidden;
-        -webkit-transition: all 600ms linear;
-        transition: all 600ms linear;
+
     }
 
     .group-title {
@@ -591,6 +683,10 @@ html, body {
     footer {
         height: 30px;
         width: 100%;
+        background-color: khaki;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .modal-wrapper {
