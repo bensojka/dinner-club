@@ -1,73 +1,53 @@
-// A $( document ).ready() block.
-//
-// Execute the javascript after the web browser has parsed
-// the entire HTML document and built the Document Object 
-// Model in memory
-//
 $( document ).ready(function() {
 
 	console.log("document ready dinner-club.js");
-	
-	// $(".devour-buttons").on("click", function() {
-	// 	console.log("A Devour Button was Pressed!");
-	// 	var buttonId = $(this).attr("value");
-	// 	console.log(`Button Id: ${buttonId}`);	
-	// 	$("#" + buttonId).appendTo("#devoured-burgers");	
-	// 	$("#" + buttonId + " > button").hide();	
-	// 	$.ajax({
-	// 		method: "PUT",
-	// 		url: "/" + buttonId,			
-	// 		data: { devoured: true }
-	// 	})
-	// 	.done(function( msg ) {
-	// 		console.log( msg );
-	// 		location.reload();
-	// 	});
-	// });	
 
-
-	$(".login-btn").on("click", function(event) {
+	$(".create-btn").on("click", function(event) {
 		event.preventDefault();
-		console.log("login-btn Submit Button was Pressed!");
 		
-		var emailData = $(".email-login").val().trim();
-		console.log("email: " + emailData);
+		var emailData = $(".email-create").val().trim();
+		var passData = $(".password-create").val().trim();
 				
 		// add user to db or if existing (get ID);
 		// go to next page.
 
 		var user = {
-			email: $(".email-login").val().trim(),
-			name: null
+			email: emailData,
+			name: null,
+			password: passData
 		  };
-		
-		  console.log(user);
+
 		  $.post("/api/new", user)
 		  // On success, run the following code
 		  .done(function(data) {
 			// Log the data we found
-			console.log(data);
+			if(data.toUpperCase() === emailData.toUpperCase()){
+			    alert('User already exists')
+            }
 		  });
-		  // Send an AJAX POST-request with jQuery
-		//   $.post("/api/new", newBook)
-		// 	// On success, run the following code
-		// 	.done(function(data) {
-		// 	  // Log the data we found
-		// 	  console.log(data);
-			
-
-		// var burgerName = $("#burgerInput").val().trim();
-		// $.ajax({
-		// 	method: "POST",
-		// 	url: "/",
-		// 	data: { burger_name: burgerName }
-		// })
-		// .done(function( msg ) {
-		// 	$("#burgerInput").val("");
-		// 	console.log( msg );
-		// 	location.reload();
-		// });
 	});
 
+	$('.login-btn').click(function(event) {
+	    event.preventDefault();
+
+        var emailData = $(".email-login").val().trim();
+        var passData = $(".password-login").val();
+
+        var user = {
+            email: emailData,
+            name: null,
+            password: passData
+        };
+
+        $.get("/api/login", user)
+        // On success, run the following code
+        .done(function(data) {
+            // Log the data we found
+            console.log(data);
+            if(data){
+            	window.location = ('/groups.html?id=' + data)
+			}
+        });
+    })
 });
 	

@@ -3,16 +3,18 @@
 module.exports = function(sequelize, DataTypes) {
   var user = sequelize.define("user", {
       name: DataTypes.STRING,
-      email: DataTypes.STRING
+      email: DataTypes.STRING,
+      password: DataTypes.STRING
   }, {
       timestamps: true
   });
 
-  // User.associate = function(models) {
-  //     User.belongsTo(models.users_groups, {
-  //         onDelete: "cascade"
-  //     });
-  // };
+  user.associate = function(models) {
+      user.belongsToMany(models.group, {
+          through: "UsersGroupsLocations",
+          onDelete: "cascade"
+      });
+  };
 
   return user;
 };

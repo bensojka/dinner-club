@@ -5,12 +5,11 @@
 // Dependencies
 // =============================================================
 var db = require("../models");
-var user = require("../models/user.js");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // Get all books
+
   app.get("/api/all", function(req, res) {
     db.user.findAll({}).then(function(results) {
       res.json(results);
@@ -19,13 +18,50 @@ module.exports = function(app) {
 
   // Add a user:
   app.post("/api/new", function(req, res) {
-    console.log("User Data:");
-    console.log(req.body);
-    db.user.create({
-      email: req.body.email,
-      name: req.body.name
+    db.user.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(function(results){
+        if(results){
+            res.json(results.email);
+        } else {
+            db.user.create({
+                email: req.body.email,
+                name: req.body.name,
+                password: req.body.password
+            });
+        }
     });
   });
+
+    //Login
+
+    app.get("/api/login", function(req, res) {
+        db.user.findOne({
+            where: {
+                email: req.query.email
+            }
+        }).then(function(results){
+            if(req.query.password === results.dataValues.password){
+                res.json(results.dataValues.id)
+            } else {
+                res.json(null)
+            }
+        })
+    });
+
+    app.post('/api/groups/new', function(req,res) {
+        db.group.create({
+            name: req.body.name
+        }).then(function(results){
+            res.json(results);
+            // db.UsersGroupsLocations.create({
+            //     groupId: results.id,
+            //     userId: req.body.id
+            // })
+        })
+    })
 
 
   // Get a specific book

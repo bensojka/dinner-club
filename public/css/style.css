@@ -99,6 +99,41 @@ html, body {
         justify-content: center;
     }
 
+    .login-create {
+        width: 70%;
+        margin: 5%;
+    }
+
+    .create-form {
+
+    }
+
+    .email-create {
+        width: 50vw;
+        padding: 10px;
+        margin: 5px;
+        background-color: lightgrey;
+        border: 0;
+    }
+
+    .password-create {
+        width: 50vw;
+        padding: 10px;
+        margin: 5px;
+        background-color: lightgrey;
+        border: 0;
+    }
+
+    .create-btn {
+        padding: 10px;
+        background-color: lightgrey;
+        border: 0;
+    }
+
+    .login-existing {
+        width: 70%;
+    }
+
     .login-form {
 
     }
@@ -106,6 +141,15 @@ html, body {
     .email-login {
         width: 50vw;
         padding: 10px;
+        margin: 5px;
+        background-color: lightgrey;
+        border: 0;
+    }
+
+    .password-login {
+        width: 50vw;
+        padding: 10px;
+        margin: 5px;
         background-color: lightgrey;
         border: 0;
     }
