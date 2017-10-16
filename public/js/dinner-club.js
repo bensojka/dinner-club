@@ -25,6 +25,9 @@ $( document ).ready(function() {
 			    alert('User already exists')
             }
 		  });
+		  
+		$(".email-create").val("");
+		$(".password-create").val("");
 	});
 
 	$('.login-btn').click(function(event) {
@@ -47,7 +50,10 @@ $( document ).ready(function() {
             if(data){
             	window.location = ('/groups.html?id=' + data)
 			}
-        });
+		});
+	// $(".email-login").val("");
+    // $(".password-login").val("");
+
     })
 });
 	
