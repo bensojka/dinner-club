@@ -1,7 +1,5 @@
 $( document ).ready(function() {
 
-	console.log("document ready dinner-club.js");
-
 	$(".create-btn").on("click", function(event) {
 		event.preventDefault();
 		
@@ -17,15 +15,22 @@ $( document ).ready(function() {
 			password: passData
 		  };
 
+		var check = 0;
+
 		  $.post("/api/new", user)
 		  // On success, run the following code
 		  .done(function(data) {
 			// Log the data we found
+              check = 1;
 			if(data.toUpperCase() === emailData.toUpperCase()){
 			    alert('User already exists')
             }
 		  });
-		  
+		  setTimeout(function(){
+		      if(check === 0){
+		          alert('User Successfully Created')
+              }
+          }, 500);
 		$(".email-create").val("");
 		$(".password-create").val("");
 	});
@@ -49,7 +54,9 @@ $( document ).ready(function() {
             console.log(data);
             if(data){
             	window.location = ('/groups.html?id=' + data)
-			}
+			} else {
+                alert('Incorrect Password')
+            }
 		});
 	// $(".email-login").val("");
     // $(".password-login").val("");

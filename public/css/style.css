@@ -15,7 +15,7 @@ html, body {
         height: 100vh;
         border-right: 1px darkkhaki solid;
         position: fixed;
-        left: -30vw;
+        left: -31vw;
         z-index: 750;
         display: flex;
         flex-direction: column;
@@ -91,7 +91,7 @@ html, body {
     }
 
     .login {
-        height: 300px;
+        height: 45vh;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -112,7 +112,7 @@ html, body {
         width: 50vw;
         padding: 10px;
         margin: 5px;
-        background-color: lightgrey;
+        background-color: khaki;
         border: 0;
     }
 
@@ -120,13 +120,13 @@ html, body {
         width: 50vw;
         padding: 10px;
         margin: 5px;
-        background-color: lightgrey;
+        background-color: khaki;
         border: 0;
     }
 
     .create-btn {
-        padding: 10px;
-        background-color: lightgrey;
+        padding: 10px 15px 10px 15px;
+        background-color: khaki;
         border: 0;
     }
 
@@ -142,7 +142,7 @@ html, body {
         width: 50vw;
         padding: 10px;
         margin: 5px;
-        background-color: lightgrey;
+        background-color: khaki;
         border: 0;
     }
 
@@ -150,13 +150,13 @@ html, body {
         width: 50vw;
         padding: 10px;
         margin: 5px;
-        background-color: lightgrey;
+        background-color: khaki;
         border: 0;
     }
 
     .login-btn {
-        padding: 10px;
-        background-color: lightgrey;
+        padding: 10px 15px 10px 15px;
+        background-color: khaki;
         border: 0;
     }
 
@@ -193,7 +193,7 @@ html, body {
     .groups-wrapper {
         min-height: 300px;
         max-width: 100%;
-        overflow: auto;
+        margin: 20px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -213,6 +213,7 @@ html, body {
     .group {
         min-height: 10vh;
         width: 70%;
+        margin:10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -236,7 +237,10 @@ html, body {
     }
 
     .group-title {
-
+        margin: 5px;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 600;
     }
 
     .group-list {
@@ -244,7 +248,43 @@ html, body {
     }
 
     .group-list-item {
+        margin-top: 3px;
+    }
 
+    .vote-form {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vote-select {
+        margin: 5px;
+        background-color: white;
+    }
+
+    .location-submit {
+        border: 0;
+        background-color: khaki;
+    }
+
+    .group-create {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .create-group-form {
+        margin: 10px;
+    }
+
+    .group-name {
+        border: 0;
+        background-color: khaki;
+    }
+
+    .create-group {
+        border: 0;
+        background-color: khaki;
     }
 
     .modal-btn {
@@ -296,7 +336,7 @@ html, body {
         height: 100vh;
         border-right: 1px darkkhaki solid;
         position: fixed;
-        left: -30vw;
+        left: -31vw;
         z-index: 750;
         display: flex;
         flex-direction: column;
@@ -372,7 +412,7 @@ html, body {
     }
 
     .login {
-        height: 300px;
+        height: 45vh;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -380,20 +420,65 @@ html, body {
         justify-content: center;
     }
 
+    .login-create {
+        width: 60%;
+        margin: 20px;
+    }
+
+    .create-form {
+
+    }
+
+    .email-create {
+        width: 45vw;
+        padding: 10px;
+        margin: 5px;
+        background-color: khaki;
+        border: 0;
+    }
+
+    .password-create {
+        width: 45vw;
+        padding: 10px;
+        margin: 5px;
+        background-color: khaki;
+        border: 0;
+    }
+
+    .create-btn {
+        padding: 10px 15px 10px 15px;
+        background-color: khaki;
+        border: 0;
+    }
+
+    .login-existing {
+        width: 60%;
+        margin: 20px;
+    }
+
     .login-form {
 
     }
 
     .email-login {
-        width: 50vw;
+        width: 45vw;
         padding: 10px;
-        background-color: lightgrey;
+        margin: 5px;
+        background-color: khaki;
+        border: 0;
+    }
+
+    .password-login {
+        width: 45vw;
+        padding: 10px;
+        margin: 5px;
+        background-color: khaki;
         border: 0;
     }
 
     .login-btn {
-        padding: 10px;
-        background-color: lightgrey;
+        padding: 10px 15px 10px 15px;
+        background-color: khaki;
         border: 0;
     }
 
@@ -428,9 +513,9 @@ html, body {
     }
 
     .groups-wrapper {
-        min-height: 400px;
+        min-height: 300px;
         max-width: 100%;
-        overflow: auto;
+        margin: 20px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -449,7 +534,8 @@ html, body {
 
     .group {
         min-height: 10vh;
-        width: 70%;
+        width: 60%;
+        margin:10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -473,7 +559,10 @@ html, body {
     }
 
     .group-title {
-
+        margin: 5px;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 600;
     }
 
     .group-list {
@@ -481,8 +570,54 @@ html, body {
     }
 
     .group-list-item {
-
+        margin-top: 3px;
+        font-size: 1.5em;
     }
+
+    .vote-form {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vote-select {
+        margin: 5px;
+        font-size: 1.5em;
+        background-color: white;
+    }
+
+    .location-submit {
+        border: 0;
+        font-size: 1em;
+        background-color: khaki;
+    }
+
+    .group-create {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .group-create-title {
+        font-size: 2em;
+    }
+
+    .create-group-form {
+        margin: 10px;
+    }
+
+    .group-name {
+        border: 0;
+        background-color: khaki;
+        font-size: 1.3em;
+    }
+
+    .create-group {
+        border: 0;
+        background-color: khaki;
+        font-size: 1.3em;
+    }
+
 
     .modal-btn {
 
@@ -533,7 +668,7 @@ html, body {
         height: 100vh;
         border-right: 1px darkkhaki solid;
         position: fixed;
-        left: -30vw;
+        left: -31vw;
         z-index: 750;
         display: flex;
         flex-direction: column;
@@ -617,7 +752,7 @@ html, body {
     }
 
     .login {
-        height: 300px;
+        height: 45vh;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -625,20 +760,65 @@ html, body {
         justify-content: center;
     }
 
+    .login-create {
+        width: 55%;
+        margin: 20px;
+    }
+
+    .create-form {
+
+    }
+
+    .email-create {
+        width: 45vw;
+        padding: 10px;
+        margin: 5px;
+        background-color: khaki;
+        border: 0;
+    }
+
+    .password-create {
+        width: 45vw;
+        padding: 10px;
+        margin: 5px;
+        background-color: khaki;
+        border: 0;
+    }
+
+    .create-btn {
+        padding: 10px 15px 10px 15px;
+        background-color: khaki;
+        border: 0;
+    }
+
+    .login-existing {
+        width: 55%;
+        margin: 20px;
+    }
+
     .login-form {
 
     }
 
     .email-login {
-        width: 50vw;
+        width: 45vw;
         padding: 10px;
-        background-color: lightgrey;
+        margin: 5px;
+        background-color: khaki;
+        border: 0;
+    }
+
+    .password-login {
+        width: 45vw;
+        padding: 10px;
+        margin: 5px;
+        background-color: khaki;
         border: 0;
     }
 
     .login-btn {
-        padding: 10px;
-        background-color: lightgrey;
+        padding: 10px 15px 10px 15px;
+        background-color: khaki;
         border: 0;
     }
 
@@ -679,9 +859,9 @@ html, body {
     }
 
     .groups-wrapper {
-        min-height: 600px;
+        min-height: 300px;
         max-width: 100%;
-        overflow: auto;
+        margin: 20px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -700,7 +880,8 @@ html, body {
 
     .group {
         min-height: 10vh;
-        width: 70%;
+        width: 40%;
+        margin:10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -709,7 +890,7 @@ html, body {
 
     .group-btn {
         height: 5vh;
-        width: 50%;
+        width: 80%;
         font-size: 150%;
         background-color: khaki;
         border: 0;
@@ -724,7 +905,10 @@ html, body {
     }
 
     .group-title {
-
+        margin: 5px;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 600;
     }
 
     .group-list {
@@ -732,7 +916,53 @@ html, body {
     }
 
     .group-list-item {
+        margin-top: 3px;
+        font-size: 1.5em;
+    }
 
+    .vote-form {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vote-select {
+        margin: 5px;
+        font-size: 1.5em;
+        background-color: white;
+    }
+
+    .location-submit {
+        border: 0;
+        font-size: 1em;
+        background-color: khaki;
+    }
+
+    .group-create {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .group-create-title {
+        font-size: 2em;
+    }
+
+    .create-group-form {
+        margin: 10px;
+    }
+
+    .group-name {
+        border: 0;
+        background-color: khaki;
+        font-size: 1.3em;
+    }
+
+    .create-group {
+        border: 0;
+        background-color: khaki;
+        font-size: 1.3em;
     }
 
     .modal-btn {
