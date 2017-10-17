@@ -593,6 +593,7 @@ html, body {
     }
 
     .group-create {
+        margin: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -716,6 +717,10 @@ html, body {
         min-height: calc(100vh - 60px);
         width: 100%;
         padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .cta-wrapper {
@@ -860,7 +865,7 @@ html, body {
 
     .groups-wrapper {
         min-height: 300px;
-        max-width: 100%;
+        max-width: 1299px;
         margin: 20px 0;
         display: flex;
         flex-direction: column;
@@ -890,7 +895,7 @@ html, body {
 
     .group-btn {
         height: 5vh;
-        width: 80%;
+        width: 300px;
         font-size: 150%;
         background-color: khaki;
         border: 0;
@@ -939,7 +944,7 @@ html, body {
     }
 
     .group-create {
-        margin: 20px;
+        margin: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
