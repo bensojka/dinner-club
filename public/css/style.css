@@ -9,6 +9,14 @@ html, body {
     background-color: #F2F2F2;
 }
 
+.btn:active {
+    -webkit-transform: translate(-1px, -1px);
+    -moz-transform: translate(-1px, -1px);
+    -ms-transform: translate(-1px, -1px);
+    -o-transform: translate(-1px, -1px);
+    transform: translate(-1px, -1px);
+}
+
 @media screen and (max-width: 640px) {
     .offcanvas-nav {
         width: 30vw;
