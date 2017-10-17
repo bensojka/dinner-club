@@ -16,18 +16,22 @@ $( document ).ready(function() {
         };
 
         var check = 0;
+        if(emailData !== '' && passData !== ''){
+            $.post("/api/new", user)
+            // On success, run the following code
+                .done(function(data) {
+                    // Log the data we found
+                    check = 1;
+                    if(data.toUpperCase() === emailData.toUpperCase()){
+                        alert('User already exists')
+                    }
+                });
+        } else {
+            alert('Please complete both forms');
+        }
 
-        $.post("/api/new", user)
-        // On success, run the following code
-            .done(function(data) {
-                // Log the data we found
-                check = 1;
-                if(data.toUpperCase() === emailData.toUpperCase()){
-                    alert('User already exists')
-                }
-            });
         setTimeout(function(){
-            if(check === 0){
+            if(check === 0 && emailData !== '' && passData !== ''){
                 alert('User Successfully Created')
             }
         }, 500);
