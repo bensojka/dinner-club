@@ -7,12 +7,12 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: true
     });
 
-    // location.associate = function(models) {
-    //     location.belongsToMany(models.group, {
-    //         through: "UsersGroupsLocations",
-    //         onDelete: "cascade"
-    //     });
-    // };
+    location.associate = function(models) {
+        location.hasMany(models.group, {
+            through: "UsersGroupsLocations",
+            onDelete: "cascade"
+        });
+    };
 
     return UsersGroupsLocations;
 };

@@ -10,9 +10,9 @@ module.exports = function(sequelize, DataTypes) {
             through: "UsersGroupsLocations",
             onDelete: "cascade"
         });
-        // Group.belongsTo(models.groups_locations, {
-        //     onDelete: "cascade"
-        // })
+        Group.belongsTo(models.groups_locations, {
+            onDelete: "cascade"
+        });
     };
 
     return group;

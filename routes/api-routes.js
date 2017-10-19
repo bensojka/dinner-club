@@ -60,8 +60,34 @@ module.exports = function(app) {
             //     groupId: results.id,
             //     userId: req.body.id
             // })
-        })
-    })
+        });
+    });
+
+    app.get('/api/all/groups', function(req, res) {
+        db.group.findAll({
+            attributes: ['id', 'name']
+        }).then(function(results) {
+            res.json(results);    
+        });
+    });
+
+    app.get('/api/all/members', function(req, res) {
+        db.UsersGroupsLocations.findAll({
+            attributes: ['userid', 'groupid', 'locationid']
+        }).then(function(results) {
+            res.json(results);    
+        });
+    });
+
+    app.get('/api/all/locations', function(req, res) {
+        db.location.findAll({
+            attributes: ['id', 'name']
+        }).then(function(results) {
+            res.json(results);    
+        });
+    });
+
+
 
 
   // Get a specific book
