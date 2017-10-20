@@ -9,12 +9,20 @@ html, body {
     background-color: #F2F2F2;
 }
 
+.btn {
+    border: 0;
+}
+
 .btn:active {
     -webkit-transform: translate(-1px, -1px);
     -moz-transform: translate(-1px, -1px);
     -ms-transform: translate(-1px, -1px);
     -o-transform: translate(-1px, -1px);
     transform: translate(-1px, -1px);
+}
+
+.btn:focus {
+    outline: 0;
 }
 
 @media screen and (max-width: 640px) {
@@ -208,6 +216,103 @@ html, body {
         justify-content: center;
     }
 
+    .group-list-wrap {
+        min-height: 33vh;
+        min-width: 33.33%;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .group-list {
+
+    }
+
+    .group {
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .group-open {
+        margin: 10px;
+        font-size: 2em;
+        background-color: khaki;
+    }
+
+    .group-user {
+        font-size: 1em;
+    }
+
+    .user-join {
+        margin: 10px;
+        font-size: 1em;
+        background-color: khaki;
+    }
+
+    .active-group-wrap {
+        min-height: 33vh;
+        min-width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .active-group {
+        min-width: 50%
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .active-group-name {
+        margin: 10px;
+        font-size: 2em;
+    }
+
+    .active-group-vote {
+        font-size: 1em;
+    }
+
+    .location-wrap {
+        min-height: 33vh;
+        min-width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .locations {
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .location-name {
+        margin: 10px;
+        font-size: 2em;
+    }
+
+    .location-vote-btn {
+        font-size: 2em;
+        background-color: khaki;
+    }
+
     .open {
         height: auto;
         visibility: visible;
@@ -218,15 +323,15 @@ html, body {
         visibility: hidden;
     }
 
-    .group {
-        min-height: 10vh;
-        width: 70%;
-        margin:10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+    /*.group {*/
+        /*min-height: 10vh;*/
+        /*width: 70%;*/
+        /*margin:10px;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+    /*}*/
 
     .group-btn {
         height: 5vh;
@@ -521,11 +626,10 @@ html, body {
     }
 
     .groups-wrapper {
-        min-height: 300px;
+        min-height: 400px;
         max-width: 100%;
         margin: 20px 0;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
@@ -540,14 +644,107 @@ html, body {
         visibility: hidden;
     }
 
-    .group {
-        min-height: 10vh;
-        width: 60%;
-        margin:10px;
+    /*.group {*/
+        /*min-height: 10vh;*/
+        /*width: 60%;*/
+        /*margin:10px;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+    /*}*/
+
+    .group-list-wrap {
+        min-width: 33.33%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .group-list {
+
+    }
+
+    .group {
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .group-open {
+        margin: 10px;
+        font-size: 2em;
+        background-color: khaki;
+    }
+
+    .group-user {
+        font-size: 1em;
+    }
+
+    .user-join {
+        margin: 10px;
+        font-size: 1em;
+        background-color: khaki;
+    }
+
+    .active-group-wrap {
+        min-width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .active-group {
+        min-width: 50%
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .active-group-name {
+        margin: 10px;
+        font-size: 2em;
+    }
+
+    .active-group-vote {
+        font-size: 1em;
+    }
+
+    .location-wrap {
+        min-width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .locations {
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .location-name {
+        margin: 10px;
+        font-size: 2em;
+    }
+
+    .location-vote-btn {
+        font-size: 2em;
+        background-color: khaki;
     }
 
     .group-btn {
@@ -873,12 +1070,105 @@ html, body {
 
     .groups-wrapper {
         min-height: 300px;
+        min-width: 90%;
         max-width: 1299px;
         margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .group-list-wrap {
+        min-width: 33.33%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .group-list {
+
+    }
+
+    .group {
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .group-open {
+        margin: 10px;
+        font-size: 2em;
+        background-color: khaki;
+    }
+
+    .group-user {
+        font-size: 1em;
+    }
+
+    .user-join {
+        margin: 10px;
+        font-size: 1em;
+        background-color: khaki;
+    }
+
+    .active-group-wrap {
+        min-width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .active-group {
+        min-width: 50%
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .active-group-name {
+        margin: 10px;
+        font-size: 2em;
+    }
+
+    .active-group-vote {
+        font-size: 1em;
+    }
+
+    .location-wrap {
+        min-width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .locations {
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .location-name {
+        margin: 10px;
+        font-size: 2em;
+    }
+
+    .location-vote-btn {
+        font-size: 2em;
+        background-color: khaki;
     }
 
     .open {
@@ -891,15 +1181,15 @@ html, body {
         visibility: hidden;
     }
 
-    .group {
-        min-height: 10vh;
-        width: 40%;
-        margin:10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+    /*.group {*/
+        /*min-height: 10vh;*/
+        /*width: 40%;*/
+        /*margin:10px;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+    /*}*/
 
     .group-btn {
         height: 5vh;
