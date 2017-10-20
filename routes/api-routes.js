@@ -63,6 +63,13 @@ module.exports = function(app) {
         });
     });
 
+    app.post('/api/groups/new', function(req,res) {
+        db.UsersGroupsLocations.create({
+            groupID: results.id,
+            userID: req.body.id
+        });
+    });
+
     app.get('/api/all/groups', function(req, res) {
         db.group.findAll({
             attributes: ['id', 'name']
@@ -87,8 +94,37 @@ module.exports = function(app) {
         });
     });
 
+    app.post('/api/new/join', function(req,res) {
+        db.UsersGroupsLocations.create({
+            groupID: results.id,
+            userID: req.body.id
+        })
+    });
 
+    app.put('api/new/vote', function(req,res) {
+        db.UsersGroupsLocations.update({
+            req.body,
+            {
+                where: {
+                    groupID: req.body.groupID,
+                    userID: req.body.userID
+                }
+            }).then(function(db) {
+                res.json(db);
+            });
+    });
 
+//    app.put("/api/posts", function(req, res) {
+//        db.Post.update(
+//            req.body,
+//            {
+//                where: {
+//                    id: req.body.id
+//                }
+//            }).then(function(dbPost) {
+//                res.json(dbPost);
+//            });
+//    });
 
   // Get a specific book
   // app.get("/api/:book", function(req, res) {
