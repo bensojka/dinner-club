@@ -55,11 +55,14 @@ module.exports = function(app) {
         db.group.create({
             name: req.body.name
         }).then(function(results){
-            res.json(results);
-            // db.UsersGroupsLocations.create({
-            //     groupId: results.id,
-            //     userId: req.body.id
-            // })
+            // res.json(results);
+            console.log('It got here');
+            db.UsersGroupsLocations.create({
+                groupId: results.id,
+                userId: req.body.id
+            }).then(function(results){
+                res.json(results)
+            });
         });
     });
 
@@ -101,18 +104,18 @@ module.exports = function(app) {
         })
     });
 
-    app.put('api/new/vote', function(req,res) {
-        db.UsersGroupsLocations.update({
-            req.body,
-            {
-                where: {
-                    groupID: req.body.groupID,
-                    userID: req.body.userID
-                }
-            }).then(function(db) {
-                res.json(db);
-            });
-    });
+    // app.put('api/new/vote', function(req,res) {
+    //     db.UsersGroupsLocations.update({
+    //         test:
+    //         {
+    //             where: {
+    //                 groupID: req.body.groupID,
+    //                 userID: req.body.userID
+    //             }
+    //         }).then(function(db) {
+    //             res.json(db);
+    //         });
+    // });
 
 //    app.put("/api/posts", function(req, res) {
 //        db.Post.update(

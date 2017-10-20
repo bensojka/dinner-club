@@ -8,8 +8,8 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     location.associate = function(models) {
-        location.belongsToMany(models.group, {
-            through: "UsersGroupsLocations",
+        location.hasMany(models.UsersGroupsLocations, {
+            // through: "UsersGroupsLocations",
             onDelete: "cascade"
         });
     };
