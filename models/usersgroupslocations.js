@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     // UsersGroupsLocations.associate = function(models) {
-    //     location.hasMany(models.group, {
+    //     location.hasMany(models.location, {
     //         through: "UsersGroupsLocations",
     //         onDelete: "cascade"
     //     });

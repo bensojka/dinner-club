@@ -7,7 +7,29 @@ $(() => {
 
   $(document).ready(() => {
 
-    for(let i = 0; i < groupsArr.length; i += 1){
+    var userId = getAllUrlParams().id;
+    console.log(userId);
+
+    // $.get('/api/groups/', userId)
+    $.get('/api/groups/' + userId)
+    .done((response) => {
+      console.log("We received an HTTP get request from the front end with the user ID: " + userId);
+      console.log(response);
+
+      var group = response.find( group => {
+
+        // You can use whatever search criteria you want here!
+        return group.name == "Awesome!";
+
+      });
+
+      console.log(group);
+ 
+      response.forEach( function(group) {
+        console.log("Group Name: " + group.name);
+      });
+
+ for(let i = 0; i < groupsArr.length; i += 1){
       const groupList = $('.group-list');
       let newGroup = new $('<div/>', {class: 'group', id: groupsArr[i][0]});
       let newGroupBtn = new $('<button/>', {class: 'group-open btn', id: groupsArr[i][1], text: groupsArr[i][1]});
@@ -21,7 +43,7 @@ $(() => {
         groupList.append(newGroup);
     }
 
-    $(document).on('click', '.group-open', function(event){
+$(document).on('click', '.group-open', function(event){
       event.preventDefault();
       const group = $('.active-group');
       let activeGroup = new $('<div/>', {class: "current"});
@@ -32,6 +54,7 @@ $(() => {
       group.html(activeGroup);
     });
 
+
     for(let i = 0; i < locationsArr.length; i += 1){
       const locations = $('.locations');
       let newLocation = new $('<div/>', {class: 'location', id: locationsArr[i][0]});
@@ -41,6 +64,18 @@ $(() => {
       newLocation.append(locationVote);
       locations.append(newLocation);
     }
+
+    });
+
+    // $.get('/api/groups', id)
+    //   .done((data) => {
+    //     console.log(data);
+    // });
+
+   
+
+    
+
 
   });
 
@@ -71,15 +106,34 @@ $(() => {
       });
   });
 
-  $(document).ready(() => {
+
+  $(document).on('click', '.location-group', (event) => {
+    event.preventDefault();
+    const name = $('.location-name').val().trim();
     const url = window.location.href;
     const urlAux = url.split('=');
     const id = urlAux[1];
-    $.get('/api/groups', id)
+
+    const data = {
+      name,
+      id,
+    };
+    $.post('/api/locations/new', data)
       .done((data) => {
         console.log(data);
       });
   });
+
+
+  // $(document).ready(() => {
+  //   const url = window.location.href;
+  //   const urlAux = url.split('=');
+  //   const id = urlAux[1];
+  //   $.get('/api/groups', id)
+  //     .done((data) => {
+  //       console.log(data);
+  //     });
+  // });
 });
 
 function populateGroups() {
@@ -109,4 +163,66 @@ function populateGroups() {
 
 function groupVote() {
 
+}
+
+function getAllUrlParams(url) {
+
+  // get query string from url (optional) or window
+  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+
+  // we'll store the parameters here
+  var obj = {};
+
+  // if query string exists
+  if (queryString) {
+
+    // stuff after # is not part of query string, so get rid of it
+    queryString = queryString.split('#')[0];
+
+    // split our query string into its component parts
+    var arr = queryString.split('&');
+
+    for (var i=0; i<arr.length; i++) {
+      // separate the keys and the values
+      var a = arr[i].split('=');
+
+      // in case params look like: list[]=thing1&list[]=thing2
+      var paramNum = undefined;
+      var paramName = a[0].replace(/\[\d*\]/, function(v) {
+        paramNum = v.slice(1,-1);
+        return '';
+      });
+
+      // set parameter value (use 'true' if empty)
+      var paramValue = typeof(a[1])==='undefined' ? true : a[1];
+
+      // (optional) keep case consistent
+      paramName = paramName.toLowerCase();
+      paramValue = paramValue.toLowerCase();
+
+      // if parameter name already exists
+      if (obj[paramName]) {
+        // convert value to array (if still string)
+        if (typeof obj[paramName] === 'string') {
+          obj[paramName] = [obj[paramName]];
+        }
+        // if no array index number specified...
+        if (typeof paramNum === 'undefined') {
+          // put the value on the end of the array
+          obj[paramName].push(paramValue);
+        }
+        // if array index number specified...
+        else {
+          // put the value at that index number
+          obj[paramName][paramNum] = paramValue;
+        }
+      }
+      // if param name doesn't exist yet, set it
+      else {
+        obj[paramName] = paramValue;
+      }
+    }
+  }
+
+  return obj;
 }

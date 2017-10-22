@@ -13,6 +13,7 @@ module.exports = function(sequelize, DataTypes) {
       user.hasMany(models.UsersGroupsLocations, {
           // through: "UsersGroupsLocations",
           onDelete: "cascade"
+        //   force: false
       });
   };
 

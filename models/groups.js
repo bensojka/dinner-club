@@ -6,7 +6,13 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     group.associate = function(models) {
+
         group.hasMany(models.UsersGroupsLocations, {
+            // through: "UsersGroupsLocations",
+            onDelete: "cascade"
+        });
+
+        group.hasMany(models.user, {
             // through: "UsersGroupsLocations",
             onDelete: "cascade"
         });
