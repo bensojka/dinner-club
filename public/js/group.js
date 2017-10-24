@@ -115,7 +115,7 @@ $(document).on('click', '.group-open', function(event){
 
   $(document).on('click', '.create-location', (event) => {
     event.preventDefault();
-    const name = $('.location-name').val().trim();
+    const name = $('.group-location-name').val().trim();
     const url = window.location.href;
     const urlAux = url.split('=');
     const id = urlAux[1];
@@ -126,6 +126,12 @@ $(document).on('click', '.group-open', function(event){
     };
     $.post('/api/locations/new', data)
       .done((data) => {
+        console.log(data);
+      });
+
+      $.get('/api/all/locations', data)
+      .done((data,) => {
+        console.log("Get all locations: ");
         console.log(data);
       });
   });
