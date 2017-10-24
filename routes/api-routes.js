@@ -62,6 +62,12 @@ module.exports = function(app) {
         });
     });
 
+
+
+
+
+    
+
     app.post('/api/locations/new', function(req,res) {
         console.log("creating a location");
         console.log(req.body.name);
@@ -133,6 +139,15 @@ module.exports = function(app) {
             res.json(results);    
         });
     });
+
+    app.get('/api/all/groups', function(req, res) {
+        db.group.findAll({
+            attributes: ['id', 'name']
+        }).then(function(results) {
+            res.json(results);    
+        });
+    });
+
 
     app.post('/api/new/join', function(req,res) {
         db.UsersGroupsLocations.create({

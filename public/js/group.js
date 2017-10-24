@@ -104,10 +104,16 @@ $(document).on('click', '.group-open', function(event){
       .done((data) => {
         console.log(data);
       });
+
+    $.get('/api/all/groups', data)
+      .done((data,) => {
+        console.log("Get all groups: ");
+        console.log(data);
+      });
   });
 
 
-  $(document).on('click', '.location-group', (event) => {
+  $(document).on('click', '.create-location', (event) => {
     event.preventDefault();
     const name = $('.location-name').val().trim();
     const url = window.location.href;
