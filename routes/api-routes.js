@@ -10,8 +10,6 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-
-
   app.get("/api/all", function(req, res) {
     db.user.findAll({}).then(function(results) {
       res.json(results);
@@ -147,7 +145,6 @@ module.exports = function(app) {
             res.json(results);    
         });
     });
-
 
     app.post('/api/new/join', function(req,res) {
         db.UsersGroupsLocations.create({
