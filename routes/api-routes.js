@@ -88,7 +88,8 @@ module.exports = function(app) {
             // userId: req.body.id
             groupId: req.body.groupId,
             locationId: req.body.locationId,
-            userId: req.body.userId
+            userId: req.body.userId,
+            vote: null,
         }).then(function(results){
             console.log("Created a new user group location: " + results.id);
             // cosole.log(results);

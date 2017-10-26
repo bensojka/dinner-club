@@ -27,11 +27,13 @@ $(() => {
 
         const grpId = 1;
         const locId = 1;
+        const voteId = null;
         
         const data = {
           groupId: grpId,
           locationId: locId,
           userId: userId,
+          vote: voteId,
         };
         console.log("data.groupId: " + data.groupId);
         $.post('/api/usergrouplocation/new', data)

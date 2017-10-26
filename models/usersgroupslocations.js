@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
     var UsersGroupsLocations = sequelize.define("UsersGroupsLocations", {
-
+        vote: DataTypes.INTEGER
     }, {
         timestamps: true
     });
