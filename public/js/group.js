@@ -14,16 +14,40 @@ $(() => {
         console.log(`We received an HTTP get request from the front end with the user ID: ${userId}`);
         console.log(response);
 
-        const group = response.find(group =>
+        // const group = response.find(group =>
 
         // You can use whatever search criteria you want here!
-          group.name === 'Awesome!');
+          // group.name === 'Awesome!');
 
-        console.log(group);
+        // console.log(group);
 
         response.forEach((group) => {
           console.log(`Group Name: ${group.name}`);
         });
+
+        const grpId = 1;
+        const locId = 1;
+        
+        const data = {
+          groupId: grpId,
+          locationId: locId,
+          userId: userId,
+        };
+        console.log("data.groupId: " + data.groupId);
+        $.post('/api/usergrouplocation/new', data)
+        .done((data) => {
+          console.log(data);
+        });
+  
+        // get usergrouplocation by userID
+        $.get('/api/all/usergrouplocation', data)
+        .done((data) => {
+          console.log('Get all uGL: ');
+          console.log(data);
+        });
+
+
+
 
         for (let i = 0; i < groupsArr.length; i += 1) {
           const groupList = $('.group-list');

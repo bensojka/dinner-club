@@ -79,12 +79,18 @@ module.exports = function(app) {
     });
 
     app.post('/api/usergrouplocation/new', function(req,res) {
+        // console.log("uGL req: " + req);
+        // console.log("uGL res: " + res);
+        console.log("uGL req.body.grpId: " + req.body.grpId);
         db.UsersGroupsLocations.create({
-            groupId: results.id,
-            locationId: null,
-            userId: req.body.id
+            // groupId: results.id,
+            // locationId: null,
+            // userId: req.body.id
+            groupId: req.body.groupId,
+            locationId: req.body.locationId,
+            userId: req.body.userId
         }).then(function(results){
-            console.log("Created a new user group location" + req.body.name);
+            console.log("Created a new user group location: " + results.id);
             // cosole.log(results);
             res.json(results)
         });
@@ -101,16 +107,12 @@ module.exports = function(app) {
     // });
 
     app.get('/api/groups/:userId', function(req, res) {
-
-        console.log(req.params);
-
+        // console.log(req.params);
         var userId = req.params.userId;
-
         db.group.findAll({}).then(function(results) {
-          console.log(results);
+        //   console.log(results);
           res.json(results);
         });
-
         // db.groups.findAll({
         //     where: {
         //         userId: userId
@@ -121,6 +123,15 @@ module.exports = function(app) {
         //     // res.json(results);    
         // });
     });
+
+    app.get('/api/all/usergrouplocation', function(req, res) {
+        db.UsersGroupsLocations.findAll({
+            attributes: ['userid', 'groupid', 'locationid']
+        }).then(function(results) {
+            res.json(results);    
+        });
+    });
+    
 
     app.get('/api/all/members', function(req, res) {
         db.UsersGroupsLocations.findAll({
