@@ -11,8 +11,9 @@ module.exports = function(sequelize, DataTypes) {
 
   user.associate = function(models) {
       user.hasMany(models.UsersGroupsLocations, {
-          through: "UsersGroupsLocations",
+          // through: "UsersGroupsLocations",
           onDelete: "cascade"
+        //   force: false
       });
   };
 

@@ -56,27 +56,83 @@ module.exports = function(app) {
             name: req.body.name
         }).then(function(results){
             res.json(results);
-            // db.UsersGroupsLocations.create({
-            //     groupId: results.id,
-            //     userId: req.body.id
-            // })
+            console.log('Created a New Group: ' + req.body.name);
         });
     });
 
-    app.post('/api/groups/new', function(req,res) {
+
+
+
+
+    
+
+    app.post('/api/locations/new', function(req,res) {
+        console.log("creating a location");
+        console.log(req.body.name);
+        db.location.create({
+            name: req.body.name
+        }).then(function(results){
+            console.log("Created a New Location : " + req.body.name);
+            // console.log(results);
+            res.json(results)
+        });
+    });
+
+    app.post('/api/usergrouplocation/new', function(req,res) {
+        // console.log("uGL req: " + req);
+        // console.log("uGL res: " + res);
+        console.log("uGL req.body.grpId: " + req.body.grpId);
         db.UsersGroupsLocations.create({
-            groupID: results.id,
-            userID: req.body.id
+            // groupId: results.id,
+            // locationId: null,
+            // userId: req.body.id
+            groupId: req.body.groupId,
+            locationId: req.body.locationId,
+            userId: req.body.userId,
+            vote: null,
+        }).then(function(results){
+            console.log("Created a new user group location: " + results.id);
+            // cosole.log(results);
+            res.json(results)
         });
     });
+    
 
-    app.get('/api/all/groups', function(req, res) {
-        db.group.findAll({
-            attributes: ['id', 'name']
+   
+
+    // app.post('/api/groups/new', function(req,res) {
+    //     db.UsersGroupsLocations.create({
+    //         groupID: results.id,
+    //         userID: req.body.id
+    //     });
+    // });
+
+    app.get('/api/groups/:userId', function(req, res) {
+        // console.log(req.params);
+        var userId = req.params.userId;
+        db.group.findAll({}).then(function(results) {
+        //   console.log(results);
+          res.json(results);
+        });
+        // db.groups.findAll({
+        //     where: {
+        //         userId: userId
+        //     }
+        // }).then(function(results){
+        //     console.log(results);
+        //     res.end();
+        //     // res.json(results);    
+        // });
+    });
+
+    app.get('/api/all/usergrouplocation', function(req, res) {
+        db.UsersGroupsLocations.findAll({
+            attributes: ['userid', 'groupid', 'locationid']
         }).then(function(results) {
             res.json(results);    
         });
     });
+    
 
     app.get('/api/all/members', function(req, res) {
         db.UsersGroupsLocations.findAll({
@@ -94,6 +150,14 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/api/all/groups', function(req, res) {
+        db.group.findAll({
+            attributes: ['id', 'name']
+        }).then(function(results) {
+            res.json(results);    
+        });
+    });
+
     app.post('/api/new/join', function(req,res) {
         db.UsersGroupsLocations.create({
             groupID: results.id,
@@ -101,18 +165,18 @@ module.exports = function(app) {
         })
     });
 
-    app.put('api/new/vote', function(req,res) {
-        db.UsersGroupsLocations.update({
-            req.body,
-            {
-                where: {
-                    groupID: req.body.groupID,
-                    userID: req.body.userID
-                }
-            }).then(function(db) {
-                res.json(db);
-            });
-    });
+    // app.put('api/new/vote', function(req,res) {
+    //     db.UsersGroupsLocations.update({
+    //         test:
+    //         {
+    //             where: {
+    //                 groupID: req.body.groupID,
+    //                 userID: req.body.userID
+    //             }
+    //         }).then(function(db) {
+    //             res.json(db);
+    //         });
+    // });
 
 //    app.put("/api/posts", function(req, res) {
 //        db.Post.update(
